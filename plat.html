@@ -9,8 +9,13 @@
         var audio = [new Audio('Stn_Name/Stn_Name_CIO_1.m4a'), new Audio('Stn_Name/Stn_Name_CIO_2.m4a')];
         for (let i = 0; i < audio.length; i++) {
           audio[i].play();
+          while(wait!=1) {}
+          var wait = 0;
         }
       }
+      audio.addEventListener("ended", function() {
+        var wait = 1;
+      });
     </script>
   </body>
 </html>
