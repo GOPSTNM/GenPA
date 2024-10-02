@@ -5,15 +5,15 @@
     <p>hi2</p>
     <button type="button" onclick="play()">Click Me!</button>
     <script>
+      playSound(sound) {
+        sound.play();
+      }
       function play(){
         var audio = [new Audio('Stn_Name/Stn_Name_CIO_1.m4a'), new Audio('Stn_Name/Stn_Name_CIO_2.m4a')];
-        for (let i = 0; i < audio.length; i++) {
-          audio[i].play();
-          audio.addEventListener("ended", function() {
-            var wait = 1;
-          });
-          while(wait!=1) {}
-          var wait = 0;
+        let prevSoundDurationSum = 0;
+        for (let playsound = 0; playsound < audio.length; playsound++) {
+          setTimeout(playSound, prevSoundDurationSum, audio[playsound]);
+          prevSoundDurationSum += audio[playsound].duration * 1000;
         }
       }
     </script>
