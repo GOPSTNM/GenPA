@@ -7,9 +7,10 @@
     <script>
       var audio = [new Audio('Plat_Stop_Service_at_1.m4a'), new Audio('Stn_Name/Stn_Name_CIO_1.m4a'), new Audio('Plat_Stop_Service_at_2.m4a'), new Audio('Stn_Name/Stn_Name_CIO_2.m4a'), new Audio('Plat_Stop_Service_at_3.m4a'), new Audio('Stn_Name/Stn_Name_CIO_3.m4a')];
       function play() {
+        var dur = 0;
         for (let i = 0; i < audio.length; i++) {
-          audio[i].play();
-          console.log(i, int(audio[i].duration) * 1000);
+          setTimeout(() => audio[i].play(), dur)
+          var dur += audio[i].duration * 1000;
         }
       }
     </script>
