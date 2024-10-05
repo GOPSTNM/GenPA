@@ -9,8 +9,7 @@
       function play() {
         for (let i = 0; i < audio.length; i++) {
           audio[i].play();
-          alert(audio[i].duration);
-          setTimeout(audio[i].duration * 1000);
+          setTimeout(int(audio[i].duration) * 1000);
         }
       }
     </script>
