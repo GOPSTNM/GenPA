@@ -10,6 +10,7 @@
         var dur = 0;
         alert(audio.length);
         for (let i = 0; i < audio.length; i++) {
+          alert(dur);
           setTimeout(() => audio[i].play(), dur);
           var dur = dur + audio[i].duration * 1000;
         }
