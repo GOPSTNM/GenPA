@@ -9,8 +9,8 @@
       function play() {
         var dur = 0;
         for (let i = 0; i < audio.length; i++) {
-          audio[i].play();
-          sleep(audio[i].duration * 1000).then(() => { console.log('World!'); });
+          sleep(dur).then(() => { audio[i].play(); });
+          var dur =audio[i].duration * 1000;
         }
       }
       function sleep(ms) {
